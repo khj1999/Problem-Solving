@@ -19,19 +19,15 @@ int main(){
     cin >> n;
 
     vector<int> h(n);
-    // 값을 입력
     for(int i = 0; i < n; i++){
         cin >> h[i];
     }
 
-    // 값을 하나씩 검사
     for(int i = 0; i < n; i++){
-        int tmp_h = h[i];
         int cnt = 1;
-        
         while(!s.empty() && s.top().height <= h[i]){
             ans += s.top().count;
-            if (s.top().height == tmp_h){
+            if (s.top().height == h[i]){
                 cnt += s.top().count;
             }
             s.pop();
@@ -39,7 +35,7 @@ int main(){
         if(!s.empty()){
             ans += 1;
         }
-        s.push({tmp_h, cnt});
+        s.push({h[i], cnt});
     }
     cout << ans << '\n';
     return 0;
