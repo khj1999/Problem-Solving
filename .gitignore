@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=c,c++,python
 
 
-./tempCodeRunnerFile.cpp
+./BOJ/tempCodeRunnerFile.cpp
 
 # 확장자가 없는 파일 무시
 *
