@@ -13,7 +13,7 @@ public class _13398 {
             arr[i] = Integer.parseInt(st.nextToken());
         }
         
-        // dp1: i번째까지의 최대 연속합, dp2: i번째 요소를 제거했을 때의 최대 연속합
+        // dp[0]: i번째까지의 최대 연속합, dp[1]: i번째 요소를 제거했을 때의 최대 연속합
         int[][] dp = new int[2][n];
         
         dp[0][0] = arr[0];
