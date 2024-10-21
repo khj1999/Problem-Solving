@@ -29,6 +29,7 @@ public class _14501 {
 
         // n일 마지막 날 또는 그 이전까지의 최대 수익을 출력
         int ans = Arrays.stream(dp).max().getAsInt();
+        // int ans = Math.max(dp[n], dp[n + 1]);
         bw.write(ans + "\n");
         bw.flush();
     }
