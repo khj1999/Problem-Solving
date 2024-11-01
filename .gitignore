@@ -2,7 +2,17 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=c,c++,python
 
 
-BOJ/tempCodeRunnerFile
+### DotnetCore ###
+# .NET Core build folders
+*.bin
+*.obj
+
+
+# Common node modules locations
+/node_modules
+/wwwroot/node_modules
+
+./BOJ/tempCodeRunnerFile
 
 # 확장자가 없는 파일 무시
 *
