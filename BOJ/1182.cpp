@@ -40,7 +40,7 @@ int main(){
     }
     sort(v.begin(), v.end());
 
-    for(int i = 1; i < n; i++){
+    for(int i = 1; i <= n; i++){
         solve(v, s, i, 0, 0);
     }
     cout << ans;
