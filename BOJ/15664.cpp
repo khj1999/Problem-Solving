@@ -7,7 +7,7 @@ using namespace std;
 vector<int> result;
 map<vector<int>, bool> check;
 
-void solve(vector<int>& v, int n, int cnt) {
+void solve(vector<int>& v, int n, int cnt, int cur) {
     if (cnt == n) {
         if (check.find(result) == check.end()) {
             for (int iter : result) {
@@ -18,15 +18,16 @@ void solve(vector<int>& v, int n, int cnt) {
         }
         return;
     }
-    for (int i = 0; i < v.size(); i++) {
+    for (int i = cur; i < v.size(); i++) {
         if (cnt > 0) {
+            if (result.back() <= v[i]) {
+                result.push_back(v[i]);
+                solve(v, n, cnt + 1, i + 1);
+                result.pop_back();
+            }
+        } else {
             result.push_back(v[i]);
-            solve(v, n, cnt + 1);
-            result.pop_back();
-        }
-        else {
-            result.push_back(v[i]);
-            solve(v, n, cnt + 1);
+            solve(v, n, cnt + 1, i + 1);
             result.pop_back();
         }
     }
@@ -44,7 +45,7 @@ int main() {
     }
 
     sort(v.begin(), v.end());
-    solve(v, m, 0);
+    solve(v, m, 0, 0);
 
     return 0;
 }
